@@ -65,3 +65,18 @@
 .ant-input-affix-wrapper {
   background-color: #f1f1f1 !important;
 }
+
+.suggestions {
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  z-index: 999;
+  list-style: none;
+  border: 1px solid #84c5f0;
+}
+
+.suggestion-li {
+  padding: 10px;
+  text-align: center;
+  margin: 0 !important;
+}

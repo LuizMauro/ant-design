@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const AutoComplete: React.FC<IProps> = ({ suggestions, value, onChange }) => {
-  const [activeSuggestion, setActiveSuggestion] = useState(0);
+  const [, setActiveSuggestion] = useState(0);
   const [filteredSuggestions, setFilteredSuggestions] = useState<ISuggestion[]>(
     []
   );
@@ -63,16 +63,9 @@ const AutoComplete: React.FC<IProps> = ({ suggestions, value, onChange }) => {
           return (
             <ul className="suggestions">
               {filteredSuggestions.map((suggestion, index) => {
-                let className;
-
-                // Flag the active suggestion with a class
-                if (index === activeSuggestion) {
-                  className = "suggestion-active";
-                }
-
                 return (
                   <li
-                    className={className}
+                    className="suggestions-li"
                     key={index}
                     onClick={() => onClick(suggestion)}
                   >
@@ -84,7 +77,7 @@ const AutoComplete: React.FC<IProps> = ({ suggestions, value, onChange }) => {
           );
         } else {
           return (
-            <div className="no-suggestions">
+            <div className="suggestions">
               <em>Sem sugestões.</em>
             </div>
           );
@@ -93,16 +86,9 @@ const AutoComplete: React.FC<IProps> = ({ suggestions, value, onChange }) => {
         return (
           <ul className="suggestions">
             {suggestions.map((suggestion, index) => {
-              let className;
-
-              // Flag the active suggestion with a class
-              if (index === activeSuggestion) {
-                className = "suggestion-active";
-              }
-
               return (
                 <li
-                  className={className}
+                  className="suggestion-li"
                   key={index}
                   onClick={() => onClick(suggestion)}
                 >
